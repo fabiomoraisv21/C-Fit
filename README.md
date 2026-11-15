@@ -26,6 +26,39 @@ No Windows, se o `src/*.c` não funcionar, é só colocar todos os arquivos `.c`
 
 Para testar mais rápido, use a opção 9 do menu, que já coloca 5 alunos de exemplo.
 
+## Funcionalidades
+
+**Alunos**
+- Cadastrar aluno (nome, CPF, idade e plano), sem deixar repetir CPF
+- Listar todos os alunos
+- Buscar por ID ou por parte do nome
+- Editar nome, idade ou plano
+- Remover aluno
+- Registrar entrada e saída da academia
+
+**Aparelhos**
+- Ver quais aparelhos estão livres ou ocupados
+- Usar um aparelho ou entrar na fila se ele estiver ocupado
+- Liberar o aparelho, que passa para o próximo da fila
+- Ver a fila de espera de cada aparelho
+- Só quem registrou entrada pode usar aparelho, e um de cada vez
+
+**Histórico de exercícios**
+- Registrar exercício (nome, séries, repetições e carga)
+- Ver o último exercício feito
+- Desfazer o último registro
+- Ver o histórico completo
+
+**Aulas coletivas** (Spinning, Funcional e Pilates)
+- Ver as aulas, vagas e quantos estão esperando
+- Inscrever aluno (se lotar, vai para a lista de espera)
+- Ver a turma e a lista de espera
+- Realizar a aula, que conta um treino para cada participante
+
+**Ranking**
+- Ranking por frequência (entradas na academia)
+- Ranking por quantidade de treinos
+
 ## Estruturas usadas
 
 **Lista encadeada (alunos.c)**
