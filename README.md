@@ -1,7 +1,7 @@
 # C-Fit
 
 Sistema de academia feito em C para o trabalho de Algoritmos e Estrutura de Dados 1.
-Roda no terminal e controla alunos, aparelhos, historico de treinos, aulas coletivas e ranking.
+Roda no terminal e controla alunos, aparelhos, histórico de treinos, aulas coletivas e ranking.
 
 Equipe Amigos da ES:
 - Fábio Morais Vieira (202600687)
