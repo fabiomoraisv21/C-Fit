@@ -8,8 +8,9 @@ void limparTela(void);
 void pausar(void);
 
 void lerTexto(char *msg, char *destino, int tamanho);
+void lerNome(char *msg, char *destino, int tamanho);
 int lerInteiro(char *msg);
 int lerInteiroIntervalo(char *msg, int min, int max);
-float lerFloat(char *msg);
+float lerFloatIntervalo(char *msg, float min, float max);
 
 #endif

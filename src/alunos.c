@@ -35,6 +35,28 @@ static Aluno *buscarPorCpf(char *cpf) {
     return NULL;
 }
 
+// o cpf tem que ter exatamente 11 numeros
+static int cpfValido(char *cpf) {
+    int i;
+    for (i = 0; cpf[i] != '\0'; i++) {
+        if (!isdigit(cpf[i]))
+            return 0;
+    }
+    return i == 11;
+}
+
+// o plano e escolhido por numero, assim nao tem como digitar errado
+static void lerPlano(char *plano) {
+    printf("Plano:\n1. Mensal\n2. Trimestral\n3. Anual\n");
+    int op = lerInteiroIntervalo("Opcao: ", 1, 3);
+    if (op == 1)
+        strcpy(plano, "Mensal");
+    else if (op == 2)
+        strcpy(plano, "Trimestral");
+    else
+        strcpy(plano, "Anual");
+}
+
 // ve se 'busca' aparece dentro do nome, sem ligar pra maiuscula/minuscula
 static int contemTexto(char *nome, char *busca) {
     char a[50], b[50];
@@ -117,8 +139,12 @@ void cadastrarAluno(void) {
     int idade;
 
     printf("\n--- Novo aluno ---\n");
-    lerTexto("Nome: ", nome, 50);
+    lerNome("Nome: ", nome, 50);
     lerTexto("CPF (so numeros): ", cpf, 15);
+    while (!cpfValido(cpf)) {
+        printf("CPF invalido! Digite os 11 numeros, sem ponto e sem traco.\n");
+        lerTexto("CPF (so numeros): ", cpf, 15);
+    }
 
     if (buscarPorCpf(cpf) != NULL) {
         printf("Ja tem um aluno com esse CPF.\n");
@@ -126,7 +152,7 @@ void cadastrarAluno(void) {
     }
 
     idade = lerInteiroIntervalo("Idade: ", 10, 120);
-    lerTexto("Plano (Mensal, Trimestral, Anual): ", plano, 20);
+    lerPlano(plano);
 
     Aluno *novo = inserirAluno(nome, cpf, idade, plano);
     if (novo != NULL)
@@ -196,9 +222,9 @@ void editarAluno(void) {
         op = lerInteiro("Opcao: ");
 
         switch (op) {
-            case 1: lerTexto("Novo nome: ", a->nome, 50); break;
+            case 1: lerNome("Novo nome: ", a->nome, 50); break;
             case 2: a->idade = lerInteiroIntervalo("Nova idade: ", 10, 120); break;
-            case 3: lerTexto("Novo plano: ", a->plano, 20); break;
+            case 3: lerPlano(a->plano); break;
             case 0: break;
             default: printf("Opcao invalida!\n");
         }

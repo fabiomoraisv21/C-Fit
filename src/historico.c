@@ -39,7 +39,7 @@ void registrarExercicio(void) {
     lerTexto("Exercicio: ", nome, 50);
     int series = lerInteiroIntervalo("Series: ", 1, 20);
     int reps = lerInteiroIntervalo("Repeticoes: ", 1, 200);
-    float carga = lerFloat("Carga em kg (0 se nao tiver): ");
+    float carga = lerFloatIntervalo("Carga em kg (0 se nao tiver): ", 0, 500);
 
     if (empilhar(&a->historico, nome, series, reps, carga)) {
         a->treinos++;
