@@ -3,7 +3,7 @@
 Sistema de academia feito em C para o trabalho de Algoritmos e Estrutura de Dados 1.
 Roda no terminal e controla alunos, aparelhos, histórico de treinos, aulas coletivas e ranking.
 
-Equipe Amigos da ES:
+Equipe 'Amigos da ES':
 - Fábio Morais Vieira (202600687)
 - Maria Eduarda de Oliveira Gualberto (202604078)
 - Maria Clara de Andrade e Silva (202600694)
@@ -66,7 +66,7 @@ Guarda os alunos cadastrados. Dá para cadastrar, listar, buscar, editar e remov
 Também registra entrada e saída da academia, e cada entrada conta na frequência.
 
 **Fila (fila.c, usada em aparelhos.c e aulas.c)**
-- Aparelhos: se o aparelho está ocupado, o aluno entra na fila. Quando ele é liberado,
+- Aparelhos: se o aparelho está ocupado, o aluno entra na fila. Quando o aparelho é liberado,
   o primeiro da fila assume. Se o aluno sai da academia, ele sai da fila e libera o
   aparelho que estava usando.
 - Aulas: os primeiros inscritos até completar as vagas fazem a aula, o resto fica
